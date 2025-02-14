@@ -1,11 +1,14 @@
 package com.example.SpringApplication.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.SpringApplication.entity.Entityclass;
 import com.example.SpringApplication.pojo.Pojo;
 import com.example.SpringApplication.service.Serviceclass;
 
@@ -44,6 +47,11 @@ public class Controller_class {
 	public String fetchweatherdetails(@RequestParam String city) {
 		return service.fetchWeatherData(city);
 		
+	}
+	
+	@GetMapping("/fetchempdata")
+	public List<Entityclass> fetchempdata(){
+	return service.fetchempdata();
 	}
 
 }
