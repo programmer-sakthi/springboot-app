@@ -50,6 +50,10 @@ public class Entityclass {
 		this.empDesignation = empDesignation;
 		this.empAge = empAge;
 	}
+	public Entityclass() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	
 	
 

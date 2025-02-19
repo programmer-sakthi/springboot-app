@@ -64,6 +64,10 @@ public class Serviceclass {
 	public List<Entityclass> fetchempdata(){
 	return repo.findAll();
 	}
+	
+	public Entityclass insertData(Entityclass data) {
+		return repo.save(data);
+		}
 }
 
 		
