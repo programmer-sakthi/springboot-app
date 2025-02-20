@@ -68,6 +68,17 @@ public class Serviceclass {
 	public Entityclass insertData(Entityclass data) {
 		return repo.save(data);
 		}
+	
+	public String  deleteRecords(int empId) {
+		if(repo.existsById(empId)) {
+			repo.deleteById(empId);
+			return empId+ "Data deleted Successfully";
+			
+		}
+		else {
+			return empId+ "Data not found";
+		}
+	}
 }
 
 		
