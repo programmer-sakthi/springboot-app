@@ -98,4 +98,17 @@ public class Serviceclass {
 	}
 
 	
+	public List<Entityclass> fetchinRecords(int empId, String empName) {
+		// TODO Auto-generated method stub
+		return repo.findByEmpIdOrEmpName(empId,empName);
+	}
+
+	public List<Entityclass> fetchorRecords(List<String> empName) {
+		// TODO Auto-generated method stub
+		return repo.findByEmpNameIn(empName);
+	}
+
+
+	
+	
 }

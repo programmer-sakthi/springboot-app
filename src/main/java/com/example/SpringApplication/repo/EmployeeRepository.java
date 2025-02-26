@@ -17,4 +17,10 @@ public interface  EmployeeRepository extends JpaRepository<Entityclass, Integer>
 
 	 List<Entityclass> findByEmpNameAndEmpId(String empName, int empId);
 
+	public List<Entityclass> findByEmpIdOrEmpName(int empId, String empName);
+
+	public List<Entityclass>  findByEmpNameIn(List<String> empName);
+
+	
+
 }
