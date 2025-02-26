@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -68,5 +69,18 @@ public class Controller_class {
 		
 		
 	}
+	@PutMapping("/updatedata/{empId}")
+	public String updateExistingRecords(@PathVariable int empId,@RequestBody Entityclass data) {
+		return service.updateRecords(empId,data);
+	}
+	@GetMapping ("/pagiation")
+	public List<Entityclass> fetchPageDetails(@RequestParam int pageno,@RequestParam int pagesize, @RequestParam String empnamesort){
+	return service.fetchPage(pageno,pagesize,empnamesort);
+	}
+	@GetMapping("/and")
+	public List<Entityclass> andQuery(@RequestParam int empId,@RequestParam String empName){
+	return service.fetchAndRecords(empId,empName);
+	}
+
 
 }
