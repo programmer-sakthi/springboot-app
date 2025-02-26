@@ -81,6 +81,16 @@ public class Controller_class {
 	public List<Entityclass> andQuery(@RequestParam int empId,@RequestParam String empName){
 	return service.fetchAndRecords(empId,empName);
 	}
-
-
+	
+	@GetMapping("/in")
+	public List<Entityclass> inQuery(@RequestParam int empId,@RequestParam List<String> empName){
+		return service.fetchorRecords(empName);
+	}
+	@GetMapping("/or")
+	public List<Entityclass> orQuery(@RequestParam int empId,@RequestParam String empName){
+	return service.fetchinRecords(empId,empName);
+	}
 }
+
+
+
